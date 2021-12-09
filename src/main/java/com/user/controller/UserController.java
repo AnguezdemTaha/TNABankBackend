@@ -28,6 +28,7 @@ public class UserController {
 	@RequestMapping("/users/{id}")  
 	public Integer getUser(Integer id) {
 	 	// return moduleService.getUser(id);
+		// another commit for heroku test
 		return id;
 	}
 	
