@@ -1,8 +1,9 @@
-package com.user.repository;
+package com.TNABank.repository;
+
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.user.model.User;
+import com.TNABank.model.User;
 
 public interface UserRepository extends CrudRepository<User, Integer> {
 }

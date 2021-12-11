@@ -1,4 +1,4 @@
-package com.user.model;
+package com.TNABank.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +16,11 @@ public class User {
 	public User() {
 		
 	}
+	
+	public User(int id) {
+		this.id = id;
+	}
+
 	public User(int id, String nom) {
 		this.id = id;
 		this.nom = nom;
