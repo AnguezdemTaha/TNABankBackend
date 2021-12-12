@@ -18,6 +18,7 @@ public class Account {
 	private float sold;
 	private Date movementDate;
 	private float movementAmount;
+	private String label;
 	
 	@ManyToOne
 	private User user;
@@ -74,7 +75,13 @@ public class Account {
 		this.user = user;
 	}
 
-	
+	public String getLabel() {
+		return label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+	}	
 
 	
 }

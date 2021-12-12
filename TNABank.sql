@@ -27,6 +27,7 @@ DROP TABLE IF EXISTS `account`;
 CREATE TABLE `account` (
   `id` int NOT NULL,
   `account_number` varchar(255) DEFAULT NULL,
+  `label` varchar(255) DEFAULT NULL,
   `movement_amount` float NOT NULL,
   `movement_date` datetime(6) DEFAULT NULL,
   `sold` float NOT NULL,
@@ -43,7 +44,7 @@ CREATE TABLE `account` (
 
 LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` VALUES (1,'11',1,NULL,2,1),(2,'22',2,NULL,1,1),(3,'33',3,NULL,-1,2);
+INSERT INTO `account` VALUES (1,'111111111111','A',1000,'2011-03-12 00:00:00.000000',11000,1),(2,'222222222222','B',1000,'2015-07-12 00:00:00.000000',19401,1),(3,'333333333333','C',1000,'2018-09-12 00:00:00.000000',30000,1),(4,'444444444444','D',2000,'2020-08-12 00:00:00.000000',41599,2),(5,'555555555555','E',2000,'2019-07-12 00:00:00.000000',48000,2),(6,'666666666666','F',3000,'2021-04-12 00:00:00.000000',60000,3);
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +66,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (37);
+INSERT INTO `hibernate_sequence` VALUES (12);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,10 +80,10 @@ DROP TABLE IF EXISTS `transfer`;
 CREATE TABLE `transfer` (
   `id` int NOT NULL,
   `amount` float NOT NULL,
+  `date` datetime(6) DEFAULT NULL,
   `label` varchar(255) DEFAULT NULL,
   `from_id` int DEFAULT NULL,
   `to_id` int DEFAULT NULL,
-  `date` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKo7j1pf8km87isibnub26wbrfp` (`from_id`),
   KEY `FKt9tuqn6jftek3gomrimsowr7g` (`to_id`),
@@ -97,7 +98,7 @@ CREATE TABLE `transfer` (
 
 LOCK TABLES `transfer` WRITE;
 /*!40000 ALTER TABLE `transfer` DISABLE KEYS */;
-INSERT INTO `transfer` VALUES (1,0.5,'A',1,3,NULL),(2,3,'B',1,3,NULL),(3,30,'test',1,3,NULL),(4,0,'a',1,3,NULL),(5,0.1,'a',1,3,NULL),(14,0,'a',1,3,NULL),(15,0,'b',2,3,'2021-12-11 21:04:44.593000'),(16,0,'1',1,3,'2021-12-11 21:11:23.598000'),(18,0,'a',2,3,'2021-12-11 21:16:11.089000'),(21,0,'a',1,3,'2021-12-11 21:20:30.011000'),(22,0,'a',1,3,'2021-12-11 21:24:36.359000'),(25,0,'a',1,3,'2021-12-11 21:28:06.143000'),(26,0,'s',1,3,'2021-12-11 21:33:57.058000'),(27,0,'t',1,3,'2021-12-11 21:39:33.913000'),(28,1,'zzz',1,3,'2021-12-11 21:45:16.495000'),(29,0,'q',1,3,'2021-12-11 21:50:18.271000'),(32,0,'a',1,3,'2021-12-11 21:59:45.131000'),(33,0,'www',1,3,'2021-12-11 22:21:04.007000'),(34,-1,'mmm',1,3,'2021-12-11 22:54:07.858000'),(35,1,'lll',2,1,'2021-12-11 23:15:51.674000'),(36,1.5,'zz',1,1,'2021-12-12 00:15:58.491000');
+INSERT INTO `transfer` VALUES (1,1000,'2021-12-12 11:56:07.226000','atod',1,4),(2,1000,'2021-12-12 12:05:37.869000','btod',2,4),(3,2000,'2021-12-12 12:18:51.712000','fToa',5,1),(4,1200,'2021-12-12 12:22:48.637000','fTob',4,2),(5,500,'2021-12-12 12:26:15.718000','fToc',4,3),(10,1000,'2021-12-12 12:38:47.692000','btod',2,4),(11,700,'2021-12-12 13:35:53.216000','ctod',3,4);
 /*!40000 ALTER TABLE `transfer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +122,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'test1'),(2,'test2');
+INSERT INTO `user` VALUES (1,'TAHA'),(2,'ZAKARIA'),(3,'HIND');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -134,4 +135,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-12  2:24:51
+-- Dump completed on 2021-12-12 14:00:04

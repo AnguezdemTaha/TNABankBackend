@@ -12,12 +12,12 @@ import com.TNABank.model.Account;
 import com.TNABank.service.AccountService;
 
 @RestController 
+@CrossOrigin
 public class AccountController {
 
 	@Autowired 
 	private AccountService accountService; 
 
-	@CrossOrigin
 	@RequestMapping(value="/users/{id}/accounts")  
 	public List<Account> getUserAcounts(@PathVariable Integer id) {
 	 	return accountService.getUserAccounts(id);

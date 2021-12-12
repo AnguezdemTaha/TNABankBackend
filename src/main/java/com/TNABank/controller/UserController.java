@@ -12,12 +12,12 @@ import com.TNABank.model.User;
 import com.TNABank.service.UserService;
 
 @RestController 
+@CrossOrigin
 public class UserController {
 
 	@Autowired 
 	private UserService moduleService; 
 
-	@CrossOrigin
 	@RequestMapping(value="/users/{id}")  
 	public Optional<User> getUserById(@PathVariable Integer id) {
 	 	return moduleService.getUser(id);

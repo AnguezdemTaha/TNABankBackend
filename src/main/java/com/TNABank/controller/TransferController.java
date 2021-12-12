@@ -13,19 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.TNABank.model.Transfer;
 import com.TNABank.service.TransferService;
 
-@RestController 
+@RestController
+@CrossOrigin
 public class TransferController {
 
 	@Autowired 
 	private TransferService transferService; 
 
-	@CrossOrigin
 	@RequestMapping(method=RequestMethod.POST, value="/transfer")  
 	public Transfer makeTransfer(@RequestBody Transfer transfer) {
 	 	return transferService.makeTransfer(transfer);
 	}
-	
-	@CrossOrigin
+
 	@RequestMapping(value="/users/{id}/transfers")  
 	public List<Transfer> getUserTransfers(@PathVariable Integer id) {
 	 	return transferService.getUserTransfers(id);
