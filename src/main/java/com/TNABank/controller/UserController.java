@@ -18,6 +18,11 @@ public class UserController {
 	@Autowired 
 	private UserService moduleService; 
 
+	@RequestMapping(value="")  
+	public String getHello() {
+	 	return "Bienvenu dans l’application TNA consulting EBank";
+	}
+	
 	@RequestMapping(value="/users/{id}")  
 	public Optional<User> getUserById(@PathVariable Integer id) {
 	 	return moduleService.getUser(id);
