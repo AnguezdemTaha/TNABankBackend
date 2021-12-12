@@ -13,6 +13,9 @@ public class TnaBankApplication {
 		SpringApplication.run(TnaBankApplication.class, args);
 	}
 	
+	
+	// TODO: enable cors globaly ?
+	/*
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
@@ -22,6 +25,6 @@ public class TnaBankApplication {
 			}
 		};
 	}
-
+	*/
 
 }
